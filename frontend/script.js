@@ -9,7 +9,7 @@
 let formComponent = function () {
   return `
     <form>
-        <input id="nameInput" type="text" placeholder="Enter your name..." />
+        <input id="name-input" type="text" placeholder="Enter your name..." />
     </form>
 `;
 };
