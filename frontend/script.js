@@ -30,26 +30,27 @@ let contentComponent = function (first, second) {
 /* === Initialize Functions === */
 
 function loadEvent() {
-  console.log('loadEvent executed');
+  console.log("loadEvent executed");
 
-  let rootElement = document.querySelector('#root');
+  let rootElement = document.querySelector("#root");
 
   rootElement.insertAdjacentHTML(
-    'beforeend',
+    "beforeend",
     contentComponent(formComponent(), displayComponent())
   );
 
-  document.querySelector('form').addEventListener('submit', function (event) {
+  document.querySelector("form").addEventListener("submit", function (event) {
     event.preventDefault();
   });
-
-  let inputElement = document.querySelector('#name-input');
-
-  const displayElement = document.querySelector('#name-display');
-
-  inputElement.addEventListener('input', function (event) {
+  
+  let inputElement = document.querySelector("#name-input");
+  
+  const displayElement = document.querySelector("#name-display");
+  
+  inputElement.addEventListener("input", function (event) {
     let inputData = event.target.value;
     displayElement.innerHTML = inputData;
+    console.log(event.target.value);
   });
 }
 
