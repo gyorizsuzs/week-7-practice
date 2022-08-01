@@ -1,25 +1,18 @@
 /*===============================================================*\
 *                                                                 * 
-*                          JS SCOPES                              *
+*                          JS HOISTING                            *
 *                                                                 * 
 \*================================================================*/
 
-let globalVariable = `Shakira`;
 
+/* function testFunction() {
+    const x= "Rammstein";
+    console.log(x);
+} */
 
-
-function logVariable() {
-    let globalVariable =`Metallica`;
-    
-    console.log(globalVariable);
-
-    function changeVariable() {
-        let globalVariable = `RHCP`;
-        console.log(globalVariable);
-    }
-    changeVariable();
+const up = function() {
+    const x= "Rammstein";
+    console.log(x);
 }
 
-console.log(globalVariable);
-
-logVariable();
+up();
