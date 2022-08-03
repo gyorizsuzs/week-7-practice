@@ -1,0 +1,58 @@
+#root {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  height: 5%;
+  width: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  .menu-btn {
+    height: 20%;
+    width: 100%;
+    background-color: black;
+    border-radius: 3px;
+    pointer-events: none;
+    position: relative;
+    transition: all 0.25s ease;
+
+    &::after,
+    &::before {
+      content: "";
+      height: 100%;
+      width: 100%;
+      background-color: black;
+      border-radius: 3px;
+      position: absolute;
+      transition: all 0.25s ease;
+    }
+
+    &::before {
+      top: -200%;
+    }
+
+    &::after {
+      top: 200%;
+    }
+  }
+
+  &.clicked {
+    .menu-btn {
+      background-color: transparent;
+      &:before {
+        transform: rotate(45deg);
+        top: 0;
+      }
+      &:after {
+        transform: rotate(-45deg);
+        top: 0;
+      }
+    }
+  }
+}
